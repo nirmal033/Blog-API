@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
-const debug = require("debug");
+const debug = require("debug")("development:mongoose");
 
 mongoose
-    .connect(`${process.env.MOGODB_URI}`)
+    .connect(`${process.env.MONGODB_URI}`)
     .then(() => {
-        debug("connected");
+        console.log("conncted");
+        // debug("connected");
     })
     .catch((err) => {
-        debug(err);
+        console.log(err);
+        // debug(err);
     })
 
 
